@@ -1,6 +1,5 @@
-
 public class Average {
-    /*
+    /**
      * Now that we can get the sum of all numbers in an array, we could also figure out how to get the average of an
      * array. The return type of this method double, so a decimal value is expected (as is common in averages).
      *
@@ -13,7 +12,22 @@ public class Average {
      * @param nums an array to be manipulated.
      * @return the average of all the values of nums.
      */
-    public double getAvg(int[] nums){
-        return 0;
+    public double getAvg(int[] nums) {
+        // Check for an empty array to avoid division by zero
+        if (nums == null || nums.length == 0) {
+            return 0.0;
+        }
+
+        // Calculate the sum of all elements in the array
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+
+        // Convert sum to double and calculate the average
+        double average = (double) sum / nums.length;
+
+        // Return the average
+        return average;
     }
 }
